@@ -17,24 +17,21 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Enum for weather kind (reusing EX2 pattern)
+
 enum WeatherType { cloudy, sunny, partlyCloudy }
 
 extension on WeatherType {
-  // Prefer PNG assets provided in lib/ex4/ when available
+
   String get asset => switch (this) {
         WeatherType.cloudy => 'lib/ex4/cloudy.png',
         WeatherType.sunny => 'lib/ex4/sunny.png',
         WeatherType.partlyCloudy => 'lib/ex4/sunnyCloudy.png',
       };
 
-  // Provide a pair of colors for gradient (reusing EX3 style theming)
+
   List<Color> get gradient => switch (this) {
-        // Purple gradient (closer to screenshot)
         WeatherType.cloudy => [const Color(0xFFC471ED), const Color(0xFF8A4FFF)],
-        // Pink gradient
         WeatherType.sunny => [const Color(0xFFF857A6), const Color(0xFFFF5858)],
-        // Teal/mint gradient
         WeatherType.partlyCloudy => [const Color(0xFF43E97B), const Color(0xFF38F9D7)],
       };
 }
@@ -63,7 +60,7 @@ class WeatherScreen extends StatelessWidget {
 
   static const cities = <CityWeather>[
     CityWeather(city: 'PhnomPenh', minC: 10, maxC: 30, currentC: 12.2, type: WeatherType.cloudy),
-    // Paris mint/teal gradient to match the provided design
+    // Paris 
     CityWeather(
       city: 'Paris',
       minC: 10,
@@ -73,7 +70,7 @@ class WeatherScreen extends StatelessWidget {
       gradient: [Color(0xFF61EAC2), Color(0xFF39D6C7)],
     ),
     CityWeather(city: 'Rome', minC: 10, maxC: 40, currentC: 45.2, type: WeatherType.sunny),
-    // Toulouse with custom orange gradient as per screenshot
+    // Toulouse 
     CityWeather(
       city: 'Toulouse',
       minC: 10,
@@ -92,7 +89,6 @@ class WeatherScreen extends StatelessWidget {
         child: AppBar(
           title: const Text(
             'Weather',
-            // Keep for tests, but visually hide to match screenshot
             style: TextStyle(color: Colors.transparent),
           ),
           elevation: 0,
@@ -159,7 +155,6 @@ class WeatherCard extends StatelessWidget {
             ),
             child: _Content(data: data),
           ),
-          // Optional decorative oval on the right side
           Positioned(
             right: -40,
             top: -10,
@@ -189,10 +184,9 @@ class _Content extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Strict circular badge to avoid any square edges from the PNG
           ClipOval(
             child: Material(
-              color: Colors.white, // solid white disc like the screenshot
+              color: Colors.white,
               child: SizedBox(
                 width: 56,
                 height: 56,
