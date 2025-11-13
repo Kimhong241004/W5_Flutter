@@ -89,7 +89,7 @@ class CustomButton extends StatelessWidget {
       case ButtonType.secondary:
         return const Color(0xFF39A94A); // green
       case ButtonType.disabled:
-        return Colors.grey.shade300;
+        return Colors.grey.shade300; //white
     }
   }
 
@@ -115,7 +115,6 @@ class CustomButton extends StatelessWidget {
           color: bg,
           borderRadius: BorderRadius.circular(28.0),
           child: InkWell(
-            onTap: enabled ? onPressed : null,
             borderRadius: BorderRadius.circular(28.0),
             splashColor: enabled ? null : Colors.transparent,
             highlightColor: enabled ? null : Colors.transparent,
