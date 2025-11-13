@@ -60,7 +60,6 @@ class CustomButton extends StatelessWidget {
   final IconData icon;
   final ButtonType type;
   final IconPosition iconPosition;
-  final VoidCallback? onPressed;
 
   const CustomButton({
     Key? key,
@@ -68,7 +67,6 @@ class CustomButton extends StatelessWidget {
     required this.icon,
     this.type = ButtonType.primary,
     this.iconPosition = IconPosition.left,
-    this.onPressed,
   }) : super(key: key);
 
   // Disabled is authoritative when the enum says disabled.
