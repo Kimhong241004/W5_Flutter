@@ -31,10 +31,6 @@ class MyApp extends StatelessWidget {
                   icon: Icons.check,
                   type: ButtonType.primary,
                   iconPosition: IconPosition.left,
-                  onPressed: () {
-                    // example action
-                    debugPrint('Submit pressed');
-                  },
                 ),
                 const SizedBox(height: 16),
                 CustomButton(
@@ -42,9 +38,6 @@ class MyApp extends StatelessWidget {
                   icon: Icons.access_time,
                   type: ButtonType.secondary,
                   iconPosition: IconPosition.right,
-                  onPressed: () {
-                    debugPrint('Time pressed');
-                  },
                 ),
                 const SizedBox(height: 16),
                 CustomButton(
@@ -52,7 +45,6 @@ class MyApp extends StatelessWidget {
                   icon: Icons.account_box,
                   type: ButtonType.disabled,
                   iconPosition: IconPosition.right,
-                  // onPressed omitted => disabled
                 ),
               ],
             ),
